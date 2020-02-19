@@ -5,5 +5,6 @@ jdk: openjdk8
 script:
   - echo "Hola Travis"
   - mvn package
+  - chmod 400 "acceso_instancia.pem"
   - ssh-heyscan -H ec2-3-134-28-16.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
-  - scp -i "acceso_instancia.pem" *.war ubuntu@ec2-3-134-28-16.us-east-2.compute.amazonaws.com:/tmp
+  - scp -i "acceso_instancia.pem" target/Netflix-1.0-SNAPSHOT.war ubuntu@ec2-3-134-28-16.us-east-2.compute.amazonaws.com:/tmp
