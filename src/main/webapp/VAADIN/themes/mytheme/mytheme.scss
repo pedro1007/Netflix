@@ -1,0 +1,116 @@
+// If you edit this file you need to compile the theme. See README.md for details.
+
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/docs/v8/framework/articles/ValoExamples.html
+
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+  @include valo;
+
+  .principal{
+  	
+	background-image: url(images/bg_netflix.jpg);
+	background-color: black;
+	background-size: cover;
+	
+	&[width-range~="0-650px"]{
+		background-image: none;	
+		
+		.login-form{
+			width: unset;
+			padding: 2px 30px 80px 30px;
+		}
+		.logo {
+			
+			img{
+			  	margin: 20px;
+				height: 38px;
+			}
+		}
+	}
+  }
+  .contenedor{
+  	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	overflow: scroll;
+  }
+  .logo {
+  	width:100%;
+  	img{
+	  	margin: 30px;
+		height: 66px;
+	  }
+	 
+  }
+  
+  .login-form{
+  	width: 380px;
+	background-color: rgba(0, 0, 0, 0.7);
+	margin: 0 auto;
+	padding: 60px 60px 112px 60px;
+	color: #b3b3b3;
+	font-size: 13px;
+	font-weight: 500;
+	
+	h2{
+	  	color:white;
+	  	font-size: 31px;
+	  	font-size: 32px;
+		font-weight: 700;
+		margin-top: 3px;
+	}
+	.v-textfield{
+		width:100%;
+		margin-bottom: 18px;
+		height: 50px;
+		background-color: #333;
+		box-shadow: 0px 0px black;
+		border: 1px solid black;
+		color: #8c8c8c;
+	}
+	.btn-login{
+		background-color: red;
+		width: 100%;
+		height: 51px;
+		border-radius: 4px;
+		text-align: center;
+		vertical-align: middle;
+		padding: 9px;
+		font-size: 20px;
+		color: white;
+		margin-top: 17px;
+		margin-bottom: 33px;
+	}
+	.btn-login:hover{
+		background-color: purple;
+	}
+  }
+}
